@@ -1,16 +1,352 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.responsive {
-  width: 100%;
-  height: auto;
-  max-height: 95vh;
-}
-</style>
+<title>Home</title>
+<meta charset="utf-8">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<meta name="description" content="Your description">
+<meta name="keywords" content="Your keywords">
+<meta name="author" content="Your name">
+<meta name = "format-detection" content = "telephone=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!--CSS-->
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/flexslider.css">
+<!--JS-->
+<script src="path/to/jquery.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-migrate-1.1.1.js"></script>
+<script src="js/superfish.js"></script>
+<script src="js/jquery.mobilemenu.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.ui.totop.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/jquery.carouFredSel-6.1.0-packed.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
+<script>
+    $(function () {
+        var language = 'english';
+        $.ajax({
+            url: 'language.xml',
+            success: function (xml) {
+                $(xml).find('translation').each(function () {
+                    var id = $(this).attr('id');
+                    var text = $(this).find(language).text();
+                    $("." + id).html(text);
+                });
+            }
+        });
+    });
+</script>
+<script>
+$(window).load(function() {									
+    $('#flexslider').flexslider({
+        animation: "fade",			
+        slideshow: true,			
+        slideshowSpeed: 7000,
+        animationDuration: 600,				
+        prevText: "",
+        nextText: "",
+        controlNav: false,
+        sync: "#slides-pagination"					
+    });	 				
+})
+</script> 
+<script>
+        $(function() {
+            $('#foo').carouFredSel({
+                auto: false,
+                responsive: true,
+                width: '100%',
+                prev: '#prev',
+                next: '#next',
+                scroll: 1,
+                items: {
+                    height: 'auto',
+                    width: 262,
+                    visible: {
+                        min: 1,
+                        max: 1
+                    }
+                },
+                mousewheel: true,
+                swipe: {
+                    onMouse: true,
+                    onTouch: true
+                }
+            });
+        });
+</script> 
+<!--[if lt IE 8]>
+        <div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/img/upgrade.jpg"border="0"alt=""/></a></div>  
+<![endif]-->
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="css/ie.css">
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
 <body>
-<img src="UnderConstruction.png" alt="Nature" class="responsive">
+<div class="global">
+<!--header-->
+    <!--
+    <div style="align-items:stretch; text-align:right">
+        <ul class="nav sf-menu clearfix">
+            <li class="active">
+                <a href="index.html">
+                     <img src="img/english.png" height="16" width="11" />
+                </a>
+            </li>
+            <li>
+                <a href="indexTr.html">
+                     <img src="img/turkish.png" height="16" width="11" />
+                </a>
+            </li>
+        </ul>
+    </div>
+    -->
+<header>
+    <div class="container">
+         <div class="navbar navbar_ clearfix">
+            <div class="navbar-inner">      
+                  <div class="clearfix">
+                        <h1 class="brand"><a href="index.html"><img src="img/logo.png" alt=""></a></h1>
+                        <div class="nav-collapse nav-collapse_ collapse">
+                            <ul class="nav sf-menu clearfix">
+                              <li class="active"><a href="index.html">Home<strong></strong></a></li> 
+                              <li><a href="index-1.html">About<strong></strong></a></li> 
+                              <!--<li class="sub-menu"><a class="menuItemAbout" href="index-1.html">About<span></span><strong></strong></a>-->
+                                <!--<ul class="submenu">
+                                    <li><a href="#">Dolore ipsu</a></li>
+                                    <li><a href="#">Consecte<span></span></a>
+                                        <ul class="submenu-1">
+                                            <li><a href="#">Dolore ipsu</a></li>
+                                            <li><a href="#">Consecte</a></li>
+                                            <li><a href="#">Elit Conseq</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Elit Conseq</a></li>
+                                </ul>
+                              </li>--> 
+                              <li><a href="index-2.html">Projects<strong></strong></a></li> 
+                              <li><a href="under_construction.html">Blog<strong></strong></a></li> 
+                              <li><a href="index-4.html">Contacts<strong></strong></a></li>                       
+                            </ul>
+                        </div>       
+                  </div>
+             </div>  
+         </div> 
+    </div>
+</header>
+<div id="slider">
+    <div id="flexslider">
+        <ul class="slides clearfix">
+            <li>
+                <img alt="" src="img/picture1.jpg">
+                <div class="flex-caption">
+                    <div class="flex-box1">
+                        <p class="title1">GLOBAL</p>
+                        <p class="title2">MISSION</p>
+                    </div>
+                    <div class="flex-box2">
+                        <p>We deliver software solutions from United Kingdom to South Africa since 2003</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img alt="" src="img/picture2.jpg">
+                <div class="flex-caption">
+                    <div class="flex-box1">
+                        <p class="title1">OUR SUBJECT</p>
+                        <p class="title2">IS YOUR BUSINESS</p>
+                    </div>
+                    <div class="flex-box2">
+                        <p>We aim high quality solutions in order to maintain efficiency and accelerate business processes</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <img alt="" src="img/picture3.jpg">
+                <div class="flex-caption">
+                    <div class="flex-box1">
+                        <p class="title1">CUSTOMER</p>
+                        <p class="title2">SERVICE</p>
+                    </div>
+                    <div class="flex-box2">
+                        <p>Our IT support is available 7/24 to ensure customer satisfaction and pave the way for future partnerships.</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>                            
+    <!--content-->
+    <div class="container padBot">
+        <div class="row">
+             <section class="span12 border1">
+                <div class="row">
+                    <article class="span7">
+                        <h2><span>MEASURABLE, ADAPTIVE AND ROBUST SOFTWARE SOLUTIONS</span></h2>
+                        <h4>we are one of the most reliable software providers in our region with an outstanding customer portfolio.</h4>
+                        <p class="margBot">Ray Solutions Inc. founded at Istanbul/Turkey in 2003, is an IT outsourcing services provider which stands out with its global partnerships from Europe to South Africa. Turkey is the fastest growing economy of the region with its highly skilled professionals and Ray Solutions Inc. distinguishes itself from regional competitors with this reputable and endless workforce. Through an accountable and flexible approach, Ray Solutions Inc. manages software development processes with latest technologies on its customers' behalf, allowing organizations to fully focus on reaching new frontiers. For years, Ray Solutions Inc. brings solutions to its valuable customers to save their cost and make their IT processes carefree inside their overall business structure.</p>
+                        <a href="index-1.html" class="btn btn-info">Read More</a>
+                    </article>
+                    <article class="span5">
+                        <h3>featured services</h3>
+                        <ul class="list5">
+                            <li>
+                                <figure><img alt="" src="img/page1_pic1.jpg"></figure>
+                                <div class="extra-wrap">
+                                    <a href="#">Software Development</a>
+                                    <p>We develop software in terms of the industry standards and add high quality by our expertise and latest technological advancements.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <figure><img alt="" src="img/page1_pic2.jpg"></figure>
+                                <div class="extra-wrap">
+                                    <a href="#">Technology Consultancy</a>
+                                    <p>Our aim is to deliver you the latest and most common technology as well as helping you with your on site needs. Our team will help you evolve your product line with cost effective solutions.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <figure><img alt="" src="img/page1_pic3.jpg"></figure>
+                                <div class="extra-wrap">
+                                    <a href="#">Project Management</a>
+                                    <p>Agile methodologies are common aspects in our development lifecycle. Working with Scrum turns software development into a dynamic product pipe line from the very first iteration. So we can achieve best and most desired results in time according to our customers' needs.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+             </section>
+             <article class="span12 slogan">
+                <div class="clearfix">
+                    <h2>Cost Effective & Trustworthy IT Services</h2>
+                    <h5><span>We put down our best effort for creating state of the art software and support it 7/24!</span></h5>
+                </div>
+                <a href="index-4.html" class="btn btn-primary pull-right">Hire US!</a>
+             </article>
+             <!--<section class="span12">
+                <div class="row">
+                    <article class="span8">
+                        <h3>Recent Posts</h3>
+                        <div class="row">
+                            <div class="thumb-pad6 span4">
+                                <div class="thumbnail">
+                                    <figure><div class="badge"><time datetime="2013-01-01">21</time><p>APR</p></div><img src="img/page1_pic4.jpg" alt=""></figure>
+                                    <div class="caption">
+                                        <a href="#">massa Dolore Ipsum veliter</a>
+                                        <h6>posted by jack moose</h6>
+                                        <p>Morbi tempor quam vel massa adipiscing ute cursuscongu  pelle ntesque nisel. Veliter comte modo velultrice conseq.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="thumb-pad6 span4">
+                                <div class="thumbnail">
+                                    <figure><div class="badge"><time datetime="2013-01-01">21</time><p>APR</p></div><img src="img/page1_pic5.jpg" alt=""></figure>
+                                    <div class="caption">
+                                        <a href="#">massa Dolore Ipsum veliter</a>
+                                        <h6>posted by jack moose</h6>
+                                        <p>Morbi tempor quam vel massa adipiscing ute cursuscongu  pelle ntesque nisel. Veliter comte modo velultrice conseq.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="span4 testim-box">
+                        <h3>Testimonials</h3>
+                        <div class="list_carousel responsive clearfix">
+                            <ul id="foo">
+                                <li>
+                                    <figure><img alt="" src="img/page1_pic6.jpg"></figure>
+                                    <div class="caption">
+                                        <h5>Lora Mendol</h5>
+                                        <h6>chromo org</h6>
+                                        <p>Morbi tempor quam vel massa adipiscing ute cursus.</p>
+                                    </div>
+                                    <p>Morbi tempor quam vel massa adipiscing cursus mi congue pelle ntesque nisel. Veliter comtmodo velultrices vel ipsum conseq.</p>
+                                </li>
+                                <li>
+                                    <figure><img alt="" src="img/page1_pic7.jpg"></figure>
+                                    <div class="caption">
+                                        <h5>Jack Moose</h5>
+                                        <h6>chromo org</h6>
+                                        <p>Nam tempor quam vel massa adipiscing ute cursus.</p>
+                                    </div>
+                                    <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque.</p>
+                                </li>
+                            </ul>
+                                <a id="prev" class="prev" href="#"></a>
+                                <a id="next" class="next" href="#"></a>
+                        </div>
+                    </article>
+                </div>
+             </section>-->
+         </div>
+     </div>
+</div>
+<!--footer-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <section class="span12 border2">
+                <div class="row">
+                    <article class="span3 info-box">
+                        <h5 class="margBot1"><em>LATEST PROJECTS</em></h5>
+                        <ul class="list1">
+                            <li><a href="index-2.html">CRM</a></li>
+                            <li><a href="index-2.html">Call Center Management</a></li>
+                            <li><a href="index-2.html">Document Management System</a></li>
+                            <li><a href="index-2.html">VoIP solutions</a></li>
+                        </ul>
+                    </article>
+                    <!--<article class="span3 info-box">
+                        <h5 class="margBot1"><em>USEFUL LINKS</em></h5>
+                        <ul class="list1">
+                            <li><a href="#">Amet consectetuer adipis</a></li>
+                            <li><a href="#">Euismod tincidunt utla</a></li>
+                            <li><a href="#">Nostd exerci tationua</a></li>
+                            <li><a href="#">Morbi tempor quam mas</a></li>
+                        </ul>
+                    </article>
+                    <article class="span3 info-box">
+                        <h5 class="margBot1"><em>From the blog</em></h5>
+                        <ul class="list1">
+                            <li><a href="#">LOREM IPSUM DOLOR</a></li>
+                            <li><a href="#">CONSECTETUR</a></li>
+                            <li><a href="#">ADIPISICING</a></li>
+                            <li><a href="#">SED DO EIUSMOD</a></li>
+                        </ul>
+                    </article>-->
+                    <article class="span3 follow-box">
+                        <h5><em>follow us</em></h5>
+                        <ul class="follow_icon">
+                            <li><a href="https://www.facebook.com/pages/Ray-Business-Solutions-Ltd/1404694713085693"><img src="img/follow_icon1.png" alt=""></a></li>
+                            <!--<li><a href="#"><img src="img/follow_icon2.png" alt=""></a></li>-->
+                            <li><a href="https://twitter.com/ray_istanbul"><img src="img/follow_icon3.png" alt=""></a></li>
+                            <!--<li><a href="#"><img src="img/follow_icon4.png" alt=""></a></li>-->
+                        </ul>
+                    </article>
+                </div>
+            </section>
+            <section class="span12">
+                <p><span>Ray Business Solutions Inc.</span>&copy; 2003 | <a href="index-5.html">Privacy Policy</a></p>
+            </section>
+        </div>
+        <!-- {%FOOTER_LINK} -->
+    </div>   
+</footer>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script>
+    $('#slides-pagination').css({opacity:0});
+    $('#slides-pagination ul').css({'margin-right':'-500px', opacity:0});
+    $(window).load(function() {	
+        $('#slides-pagination').css({opacity:1});
+        $('#slides-pagination ul').css({opacity:1}).delay(500).animate({'margin-right':'30px'},550, "easeOutExpo");
+    })
+</script>
 </body>
 </html>

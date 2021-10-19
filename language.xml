@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+  <translation id="title">
+    <english>Hello there, how are you?</english>
+    <turkish>Ciao, come stai?</turkish>
+  </translation>
+  <translation id="menuItemProjects">
+    <english>Projects</english>
+    <turkish>Projeler</turkish>
+  </translation>
+  <translation id="menuItemContacts">
+    <english>Contacts</english>
+    <turkish>İletişim</turkish>
+  </translation>
+  <translation id="menuItemHome">
+    <english>Home</english>
+    <turkish>Anasayfa</turkish>
+  </translation>
+  <translation id="menuItemHome1">
+    <english>Home</english>
+    <turkish>Anasayfa</turkish>
+  </translation>
+  <translation id="menuItemAbout">
+    <english>About</english>
+    <turkish>Hakkımızda</turkish>
+  </translation>
+  <translation id="menuItemContact1">
+    <english>find us</english>
+    <turkish>lokasyon</turkish>
+  </translation>
+</translations>
